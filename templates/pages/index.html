@@ -1,6 +1,15 @@
 {% extends 'base.html' %} {% load humanize%} {% block content %}
 <!-- Showcase -->
-<section id="showcase">
+<section
+  id="showcase"
+  style="
+    background: url(/static/img/showcase.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+  "
+>
   <div class="container text-center">
     <div class="home-search p-5">
       <div class="overlay p-5">
@@ -41,7 +50,7 @@
                     State (All)
                   </option>
                   {% for key,value in state_choices.items %}
-                    <option value="{{ key }}">{{ value }}</option>
+                  <option value="{{ key }}">{{ value }}</option>
                   {% endfor %}
                 </select>
               </div>
@@ -56,7 +65,7 @@
                   </option>
                   {% for key,value in bedroom_choices.items %}
                   <option value="{{ key }}">{{ value }}</option>
-                {% endfor %}
+                  {% endfor %}
                 </select>
               </div>
               <div class="col-md-6 mb-3">
@@ -65,7 +74,7 @@
                     Max Price (Any)
                   </option>
                   {% for key,value in price_choices.items %}
-                    <option value="{{ key }}">{{ value }}</option>
+                  <option value="{{ key }}">{{ value }}</option>
                   {% endfor %}
                 </select>
               </div>
@@ -79,6 +88,9 @@
     </div>
   </div>
 </section>
+
+<!-- Alerts -->
+{% include 'partials/_alerts.html' %}
 
 <!-- Listings -->
 <section id="listings" class="py-5">
@@ -100,7 +112,7 @@
             <div class="listing-heading text-center">
               <h4 class="text-primary">{{ listing.title }}</h4>
               <p>
-                <i class="fas fa-map-marker text-secondary"></i> 
+                <i class="fas fa-map-marker text-secondary"></i>
                 {{ listing.city }} {{ listing.state }}, {{ listing.zipcode }}
               </p>
             </div>

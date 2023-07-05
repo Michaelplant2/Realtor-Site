@@ -32,7 +32,7 @@ def contact(request):
             'There has been an inquiry for ' + listing + '. Sign into the admin panel for more info',
             'MEPlantamura@gmail.com',
             ['MEPlantamura@gmail.com'],
-            fail_silently= False
+            fail_silently = False
         )
 
         messages.success(request, 'Your request has been submitted, a realtor will get back to you soon')

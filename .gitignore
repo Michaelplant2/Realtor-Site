@@ -401,3 +401,4 @@ FodyWeavers.xsd
 /media
 venv
 /static
+.env
